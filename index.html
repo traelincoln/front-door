@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<title>Front Door</title>
+	<style >
+		body {
+			background-color: #f5f5f5;
+			width: 100%;
+			padding: 1em;
+			padding-top: 0;
+			display: flexbox;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+		}
+
+		header{
+			background-color: #f5f5f5
+			font-size: larger;
+			color: rebeccapurple;
+		}
+
+		#content{
+			width: 600px;
+			border-bottom-right-radius:  10px;
+			border-bottom-left-radius: 10px;
+		}
+
+		#tabs ul {
+			justify-content: inline-start;
+		}
+
+
+		h2 {
+			margin-bottom: .5em;
+		}
+
+		section{
+			padding: 2rem;
+			padding-bottom: 1rem;
+		}
+
+		input[type='submit']{
+			margin-top: .5em;
+			margin-bottom: .5em;
+		}
+
+		fieldset p{
+			font-size: smaller;
+			margin-bottom: 0;
+		}
+
+		#home-link{
+			display: flex;
+			justify-content: inline-start;
+		}
+
+
+	</style>
+</head>
+
+<body>
+	<div>
+		<symbol id="people-circle" viewBox="0 0 16 16">
+			<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+			<path fill-rule="evenodd"
+				d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+		</symbol>
+	</div>
+	<main id="content" class="fakewindowcontain container form-container text-center">
+		<header id="top" class="mt-0 pt-2" >
+		<a href="/" id="home-link" class="text-dark text-decoration-none">
+			<img src="assets/img/home.svg" class="rounded-2 me-4"  width="50" height="50" >
+			<h1 class="" >Site name</h1>
+		</a>
+		</header>
+		<div id="tabs">
+	        <ul class="nav nav-tabs" >
+	            <li><a id="login-link" class="nav-tab nav-link px-2" href="#login-section">Login</a></li>
+	            <li><a id="registration-link" class="nav-tab nav-link px-2" href="#registration-section">Register</a></li>
+	            <li>
+	            <a id="recovery-link" class="nav-tab nav-link px-2" href="#recovery-section">Account Recovery</a></li>
+	            <li><a id="contact-link" class="nav-tab nav-link px-2" href="#contact-section">Contact Form</a></li>
+	        </ul>
+			<section id="login-section">
+				<h2>Please Login</h2>
+				<form id="login-form" method="post" action="login">
+					<fieldset class="m-2">
+						<label class="visually-hidden" for="username">Username:</label>
+						<input id="login-username" class="form-control" type="text" name="username" placeholder="Username" required>
+						<p class="feedback m-0"></p>
+					</fieldset>
+					<fieldset class="m-2">
+						<label class="visually-hidden" for="password">Password:</label>
+						<input id="login-password" class="form-control" type="password" name="password" placeholder="Password" required>
+						<p class="feedback m-0"></p>
+					</fieldset>
+					<fieldset class="m-2">
+						<input class="btn btn-lg btn-secondary mx-auto" type="submit" value="Login">
+						<p class="">Don't have an account? <a href="#registration-section">Try Account Registration.</a>
+						</p>
+						<p class="">Forgotten password? <a href="#recovery-section">Recover your account.</a></p>
+					</fieldset>
+				</form>
+			</section>
+			<section id="registration-section">
+				<h2>Account Registration</h2>
+				<form id="registration-form" method="post" action="register">
+					<fieldset class="m-2">
+						<label class="visually-hidden" for="registration-fullname">Fullname:</label>
+						<input class="form-control" type="text" name="fullname" id="registration-fullname"
+							placeholder="Fullname">
+						<p class="feedback m-0 ">
+					</fieldset>
+					<fieldset class="m-2">
+						<label class="visually-hidden" for="username">Username:</label>
+						<input class="form-control" id="login-email" type="text" name="username" placeholder="Username" required>
+						<p class="feedback m-0"></p>
+					</fieldset>
+					<fieldset class="m-2">
+						<label class="visually-hidden" for="registration-email">Email Address:</label>
+						<input class="form-control" type="email" name="email" id="registration-email" placeholder="Email Address ">
+						<p class="feedback m-0"></p>
+					</fieldset>
+					<fieldset class="m-2">
+						<label class="visually-hidden" for="password">Password:</label>
+						<input class="form-control" type="password" name="password" id="registration-password" placeholder="Password"
+							required>
+						<p class="feedback m-0"></p>
+					</fieldset>
+					<fieldset class="m-2">
+						<label class="visually-hidden" for="confirm-password">Verify Password:</label>
+						<input class="form-control" type="password" name="confirm-password" id="confirm-password"
+							placeholder="Verify Password" required>
+						<p class="feedback m-0"></p>
+					</fieldset>
+					<fieldset class="m-2">
+						<input class="btn btn-lg btn-secondary mx-auto" type="submit" value="Register">
+						<p class="m-2">If you already have an account <a href="#login-section">Try Logging in.</a></p>
+					</fieldset>
+				</form>
+			</section>
+			<section id='recovery-section'>
+				<h2>Account Recovery</h2>
+				<p>Enter your registered email address to recover your account.</p>
+				<form id="recovery-form" method="post" action="register">
+					<fieldset class="m-2">
+						<label class="visually-hidden" for="recovery-email">Email address:</label>
+						<input class="form-control" type="email" id="recovery-email" name="email" placeholder="Recovery Email" >
+						<p class="feedback m-0"></p>
+					</fieldset>
+					<fieldset class="m-2">
+						<input class="btn btn-lg btn-secondary mx-auto" type="submit" value="Register">
+						<p class="m-2">If you don't have an account <a href="#registration-section">Register here.</a></p>
+					</fieldset>
+				</form>
+			</section>
+			<section id='contact-section'>
+				<h2>Contact Form</h2>
+				<form id="contact-form" method="post" action="contact-us">
+					<fieldset class="m-2">
+						<label class="visually-hidden" for="contact-fullname">Fullname:</label>
+						<input class="form-control" type="text" name="fullname" id="contact-fullname" placeholder="Fullname" required>
+						<p class="feedback m-0"></p>
+					</fieldset>
+					<fieldset class="m-2">
+						<label class="visually-hidden" for="contact-email">Email address</label>
+						<input class="form-control" type="email" name="email" id="contact-email" placeholder="Email Address" required>
+						<p class="feedback m-0"></p>
+					</fieldset>
+					<fieldset class="m-2">
+						<label for="contact-message" class="visually-hidden" >Your message:</label>
+						<textarea id="contact-message" class="form-control" name="message" placeholder="Type your message here"
+							required cols="50" rows="5"></textarea>
+						<p class="feedback"></p>
+					</fieldset>
+					<fieldset class="m-2">
+						<input class="btn btn-lg btn-secondary mx-auto" type="submit" value="Send">
+					</fieldset>
+				</form>
+			</section>
+		</div>
+		<p class="copyright-notice">&copy;Harare In HDR @2023</p>
+	</main>
+	<script type="text/javascript" src="assets/js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery-ui.min.js" ></script>
+	<script type="text/javascript">
+		$().ready( ()=>{
+			let emailTest = /^\w+([-.]\w+)*@\w+(\.\w+)+$/g;
+			$("#tabs").tabs();
+			$("input.form-control").on("blur", (e)=>{
+				let target = event.target;
+				let $target = $(target);
+				let value = $target.val()
+				let feedback;
+				if (target.name == "email"){
+					target.checkValidity = () => {
+						return emailTest.test(value)
+					}
+					feedback = "Invalid email address";
+				}
+				else if (target.name == "username"){
+					target.checkValidity = () => {
+						return /^[\w'-]{5,250}$/g.test(value);
+				}
+				if (target.id == "registrtion-username")
+					feedback = "Username must have 5 to 50 alphanumerics only 0-9a-zA-Z_-'";
+				else feedback = "Invalid username"
+
+				}
+				else if (target.name == "password"){
+					target.checkValidity = () => {
+						return /.{8,250}/g.test(value);
+					}
+					if (target.id == "registration-password")
+						feedback = "Password must be at least 8 keyboard characters including special characters."
+					else feedback = "Thats too short for a password!"
+
+				}
+				else if (target.name == "confirm-password") {
+					let password = $target.parents("form").find("input[name='password']").val()
+					target.checkValidity = ()=> {
+						return password == value;
+					}
+
+					feedback = "Passwords must match."
+
+				}
+				else if (target.name == "fullname"){
+					target.checkValidity = ()=> { 
+						return value.trim().length;
+					}
+					feedback = "Fullname is required"
+				}
+
+				if (target.checkValidity()){
+					$target.switchClass("is-invalid", "is-valid");
+					$target.siblings("p.feedback").text(null)
+				}
+				else {
+					$target.switchClass("is-valid", "is-invalid")
+					$target.siblings("p.feedback").text(feedback).toggleClass("invalid-feedback", true);
+				}
+			});
+			let $forms = $("form").on("submit", (e) =>
+				{
+					let $form = $(e.target).closest(`form`)
+					if (!$form[0].checkValidity())
+					{
+						e.preventDefault();
+						$form.find('input.form-control').trigger("blur")
+						$form.shake()
+					}
+				});
+		});
+	</script>
+</body>
+
+</html>
